@@ -1,11 +1,20 @@
-from math import ceil
 from gliner import GLiNER
+from math import ceil
+import os
+from os.path import dirname
+import sys
+
+working_path = '/'.join(os.path.dirname(os.path.realpath(__file__)).split('/')[:-1])
+sys.path.append(dirname(os.path.join(working_path, 'model')))
+sys.path.append(dirname(os.path.join(working_path, 'checkpoint')))
+
 
 from model.tags import cult_tags
 from model.utils import merge_entities
 
+
 # upload model
-gliner = GLiNER.from_pretrained('/local_model_storage', load_tokenizer=True, local_files_only=True)
+gliner = GLiNER.from_pretrained(os.path.join(working_path, 'checkpoint'), load_tokenizer=True, local_files_only=True)
 gliner.eval()
 
 
