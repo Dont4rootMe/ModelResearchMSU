@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pydentic = "*"
+gliner = "==0.1.12"
+omegaconf = "*"
+numpy = "*"
+seaborn = "*"
+scipy = "*"
+transformers = "*"
+torch = "*"
+wandb = "*"
+cvxpy = "*"
+uvicorn = "*"
+fastapi = "*"
+
+[dev-packages]
+ipykernel = "*"
+
+[requires]
+python_version = "3.11"
